@@ -13,7 +13,7 @@
 - **Frontend:** HTML, CSS, JavaScript, and Bootstrap for responsive design.
 - **Backend:** Node.js and Express for server-side logic.
 - **Email Service:** Gmail (via Nodemailer) for sending email notifications and reports.
-- **Deployment:** Render for hosting the web application.
+- **Deployment:** Render for hosting the website.
 
 ## Installation
 To run the project locally, follow these steps:
