@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<style>
+    @keyframes cursor {
+        to {
+            border-left: 2px solid var(--main-color);
+        }
+    }
+    
+    /* show */
+    @keyframes words {
+        0%, 20% { content: "Phishing"; }
+        21%, 40% { content: "Identity Theft"; }
+        41%, 60% { content: "Malware Attacks"; }
+        61%, 80% { content: "Ransomware"; }
+        81%, 100% { content: "CyberStalking"; }
+    }
+    
+    /* delete */
+    @keyframes typing {
+        0%, 10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+            width: 0;
+        }
+        5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+            width: calc(100% + 8px);
+        }
+    }
+    
+    
+    @keyframes typing-effect {
+        0% { width: 0; }
+        50% { width: 70%; }
+        100% { width: 0; }
+    }
+    
+    @keyframes blink-effect {
+        50% { border-right: 2px solid var(--main-color); }
+    }
+    
+    .typing-text {
+        display: inline-block;
+        overflow: hidden;
+        border-right: 2px solid var(--main-color); 
+        white-space: nowrap;
+        width: 0; 
+        animation: typing-effect 6s steps(40, end) infinite, blink-effect 0.7s step-end infinite;
+    }
+    
+    
+    </style>
+<body>
+    <header class="header">
+        <a href="#home" class="logo">CyberCrime <span>.com</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="home.html" class="active">Home</a>
+            <a href="statistics.html">Statistics</a>
+            <a href="prevent.html">Prevention</a>
+            <a href="report.html">Report</a>
+            
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Have you ever experienced issues related to <span>CyberCrime?</span></h1>
+            <h3 class="text-animation">---</h3>
+            <div class="btn-group">
+                <a href="report.html" class="btn">Yes</a>
+                <a href="#infographic" class="btn">No</a>
+            </div>
+            <br><br>
+            <p>for more information :</p>
+
+            
+            <p>This page has been visited <strong id="counter">0</strong> times.</p>
+
+            <div class="social-icons">
+                <a href="https://en.wikipedia.org/wiki/Cybercrime"><i class='bx bxl-google'></i></a>
+                <a href="https://thaipoliceonline.com"><i class='bx bxs-shield-plus'></i></a>
+                <a href="https://www.youtube.com/live/qS4ViqnjkC8?si=gd9b5WljII6tnCgZ"><i class='bx bxl-youtube'></i></a>
+                <a href="#" onclick="makeCall()"><i class='bx bx-phone-call'></i></a>
+            </div>
+        </div>
+        <div class="home-img">
+            <img src="radar.gif" alt="">
+        </div>
+    </section>
+    <section class="infographic" id="infographic">
+        <h2 class="heading">Examples of <span>Cybercrime</span></h2>
+
+
+        <div class="timeline-items">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">First</div>
+                <div class="timeline-content">
+                    <h3>1) PHISHING</h3>
+                    <p>
+                   Deceptive attempts to obtain sensitive information by 
+                   disguising as a trustworthy entity.     
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Second</div>
+                <div class="timeline-content">
+                    <h3>2) IDENTITIY THEFT</h3>
+                    <p>Unauthorized acquistion and use of someone's personal
+                        information to commit fraud or other crimes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Third</div>
+                <div class="timeline-content">
+                    <h3>3) MALWARE ATTACKS</h3>
+                    <p>Malicious software designed to harm to exploit
+                        systems and devices.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Forth</div>
+                <div class="timeline-content">
+                    <h3>4) RANSOMWARE</h3>
+                    <p>Malicious software that encrypts a user's files,
+                        demanding payment for their release.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Fifth</div>
+                <div class="timeline-content">
+                    <h3>5) CYBERSTALKING</h3>
+                    <p>Unwelcome use of electronic communication and online
+                        platforms to harass, intimidate, or threaten an individual.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+                document.addEventListener("DOMContentLoaded", function () {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+
+            function checkVisibility() {
+                const triggerBottom = window.innerHeight; // Check when the entire item is in view
+
+                timelineItems.forEach((item, index) => {
+                    const box = item.getBoundingClientRect();
+                    const boxTop = box.top;
+
+                    console.log(`Item ${index} top: ${boxTop}, Trigger: ${triggerBottom}`); // Debugging log
+
+                    if (boxTop < triggerBottom) {
+                        item.classList.add('visible'); // Add visible class to animate
+                        item.style.animationDelay = `${index * 0.3}s`; // Staggered effect
+                    } else {
+                        item.classList.remove('visible'); // Remove the class when out of view
+                        item.style.animationDelay = '0s'; // Reset delay
+                    }
+                });
+            }
+
+            checkVisibility(); // Check visibility on load
+            window.addEventListener('scroll', checkVisibility); // Check on scroll
+        });
+        // Fetch the current visit count from the API and update the page
+        function updateVisitCount() {
+            fetch('/api/visits')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('counter').innerText = data.visitCount;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Call the function to update the visit count when the page loads
+        window.onload = updateVisitCount;
+
+        function makeCall() {
+            let confirmCall = confirm("Do you want to report CyberCrime right now?");
+            if (confirmCall) {
+                window.location.href = 'tel:+1441';
+            }
+        }
+    </script>
+
+    <footer class="footer">
+        <ul class="list">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Information</a></li>
+            <li><a href="#">Report</a></li>
+        </ul>
+        <p class="copyright">Cvber.com | All rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
